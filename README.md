@@ -10,7 +10,7 @@ Test your typing skills with this app.
 ## Install
 
 ```sh
-cd .\client\
+cd .\typing-test\
 npm install
 ```
 
