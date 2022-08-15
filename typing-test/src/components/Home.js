@@ -1,8 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 
 function Home({ time, paragraph, onChangeTime, onChangeParagraph, startTest }) {
   return (
-    <div className="App">
+    <div>
       <div onChange={onChangeTime}>
         Choose time:
         <input type="radio" id="1" name="time" value="1" />
@@ -14,7 +15,8 @@ function Home({ time, paragraph, onChangeTime, onChangeParagraph, startTest }) {
       </div>
       <p>{paragraph}</p>
       <div>
-        <textarea onChange={onChangeParagraph} rows="10" cols="60" />
+        <h4>Use suggested text above or paste your own text below.</h4>
+        <textarea onChange={onChangeParagraph} rows="15" cols="65" />
       </div>
       <button disabled={!time} onClick={startTest}>Start test</button>
     </div>

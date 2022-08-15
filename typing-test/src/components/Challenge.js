@@ -41,12 +41,18 @@ function Challenge({ time, paragraph, setParagraph, randomSentence, setCustomPar
     return () => clearInterval(newIntervalId);
   }, []);
 
+  if (!time || !paragraph) {
+    navigate('/')
+    return
+  }
+
   return (
     <div className="App">
       <div>Time left: {count}</div>
       <p>{paragraph}</p>
       <div>
-        <textarea onChange={onUpdateAnswer} rows="10" cols="60" />
+        <h4>Type text below</h4>
+        <textarea onChange={onUpdateAnswer} rows="15" cols="65" />
       </div>
       {!scores.display ? 
         <button onClick={onCompleted}>Submit</button> :
